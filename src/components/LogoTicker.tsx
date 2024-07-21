@@ -6,6 +6,7 @@ import celestialLogo from "../assets/images/celestial.png";
 import pulseLogo from "../assets/images/pulse.png";
 import apexLogo from "../assets/images/apex.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const images = [
   { src: acmeLogo, alt: "Acme Logo" },
@@ -24,7 +25,20 @@ export const LogoTicker = () => {
           Trusted by the world's most innovative teams
         </h2>
         <div className="overflow-hidden mt-9 before:content-[''] after:content-[''] before:absolute after:absolute before:h-full after:h-full relative before:w-5 after:w-20 after:right-0 before:left-0 before:top-0 after:top-0 before:bg-[linear-gradient(to_right,#000,rgb(0,0,0,0))] after:bg-[linear-gradient(to_left,#000,rgb(0,0,0,0))]">
-          <div className="flex gap-16">
+          <motion.div
+            initial={{
+              translateX: 0,
+            }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            animate={{
+              translateX: "-50%",
+            }}
+            className="flex gap-16 mt-9 flex-none pr-16 before:content-['']  before:z-10 after:content-['']  after:z-10"
+          >
             {images.map((image) => (
               <Image
                 key={image.alt}
@@ -33,7 +47,15 @@ export const LogoTicker = () => {
                 className="flex-none h-8 w-auto"
               />
             ))}
-          </div>
+            {images.map((image) => (
+              <Image
+                key={image.alt}
+                src={image.src}
+                alt={image.alt}
+                className="flex-none h-8 w-auto"
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

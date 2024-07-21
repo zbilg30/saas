@@ -1,9 +1,11 @@
 "use client";
+
 import { useState } from "react";
 import PlusIcon from "../assets/icons/plus.svg";
 import MinusIcon from "../assets/icons/minus.svg";
-
+import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
+
 const items = [
   {
     question: "What payment methods do you accept?",
@@ -44,14 +46,33 @@ const Accordian = ({
         <span className="flex-1 text-lg font-bold">{question}</span>
         {open ? <MinusIcon /> : <PlusIcon />}
       </div>
-      <div
-        className={clsx("mt-4 max-w-[648px] mx-auto", {
-          hidden: !open,
-          "": open,
-        })}
-      >
-        {answer}
-      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className={clsx("mt-4 ", {
+              hidden: !open,
+              "": open,
+            })}
+            initial={{
+              opacity: 0,
+              height: 0,
+              marginTop: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+              marginTop: "16px",
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+              marginTop: 0,
+            }}
+          >
+            {answer}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
