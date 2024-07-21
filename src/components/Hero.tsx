@@ -45,8 +45,8 @@ export const Hero = () => {
             </h1>
           </div>
         </div>
-        <div className="flex justify-center">
-          <p className="text-center text-xl mt-8 max-w-[300px]">
+        <div className="flex justify-center max-w-xs mx-auto">
+          <p className="text-center text-xl mt-8 ">
             Celebrate the joy of accomplishment with an app designed to track
             progress, motivate your efforts, and celebrate your successes
           </p>
