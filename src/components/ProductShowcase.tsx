@@ -40,6 +40,7 @@ export const ProductShowcase = () => {
             rotateX: translateX,
             transformPerspective: "800px",
           }}
+          className="flex justify-center "
         >
           <Image
             ref={imageRef}
