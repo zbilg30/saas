@@ -22,7 +22,7 @@ export const LogoTicker = () => {
     <div className="bg-black text-white py-[72px] sm:py-24">
       <div className="container">
         <h2 className="text-xl text-white/70 text-center">
-          Trusted by the world's most innovative teams
+          Trusted by the world&apos;s most innovative teams
         </h2>
         <div className="overflow-hidden mt-9 before:content-[''] after:content-[''] before:absolute after:absolute before:h-full after:h-full relative before:w-5 after:w-20 after:right-0 before:left-0 before:top-0 after:top-0 before:bg-[linear-gradient(to_right,#000,rgb(0,0,0,0))] after:bg-[linear-gradient(to_left,#000,rgb(0,0,0,0))]">
           <motion.div
